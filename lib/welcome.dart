@@ -1,5 +1,6 @@
 import 'package:firebase_project/login.dart';
 import 'package:firebase_project/signup.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _WelcomeState extends State<Welcome> {
         child: Column(
         children: [
         Padding(
-        padding: const EdgeInsets.only(top: 30,bottom: 15),
+        padding: const EdgeInsets.only(top: 30),
     child: Text('Welcome',
     style: TextStyle(fontSize: 45,
     fontWeight: FontWeight.bold
@@ -25,15 +26,26 @@ class _WelcomeState extends State<Welcome> {
     ),
     ),
     Text('Do Subscribe'),
-          SizedBox(height: 80,),
-          TextButton(onPressed:() {
+          SizedBox(height: 35,),
+          Container(
+            width: 500,
+            child: Center(
+              child:Column(
+                children: [
+               Image.asset('assets/images/wlcm.jpg'),
+                ],
+              ),
+            ),
+          ),
+           // SizedBox(height: 200,),
+           TextButton(onPressed:() {
             Navigator.push(context, MaterialPageRoute(
               builder: (context) => const Login() ,)
             );
           },
             child: Container(
                 width: 400,
-                height: 50,
+                height: 40,
                 alignment: Alignment.center,
                 decoration:BoxDecoration(borderRadius: BorderRadius.circular(40),
                     color:Colors.white,
@@ -44,7 +56,7 @@ class _WelcomeState extends State<Welcome> {
                       fontWeight:FontWeight.bold ),)
             ),
           ),
-          SizedBox(height: 15,),
+           SizedBox(height: 15,),
           TextButton(onPressed:() {
             Navigator.push(context, MaterialPageRoute(
               builder: (context) => const Signup() ,)
@@ -52,7 +64,7 @@ class _WelcomeState extends State<Welcome> {
           },
             child: Container(
                 width: 400,
-                height: 50,
+                height: 40,
                 alignment: Alignment.center,
                 decoration:BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
